@@ -1,0 +1,9 @@
+﻿
+
+Temayı temize çekiyorum. Daha sonra veritabanını oluştutup modelimi aktaracağım gerisi birkaç günümü alacak.
+
+Navbar için denemeler yaptım olmadı solidi eziyorum.
+
+ilk üç sayfanın tasarımı bitti. Hoşgeldiniz, portfolyo, Galery.
+
+En başta yazan giriş kısmını düzelticem.
