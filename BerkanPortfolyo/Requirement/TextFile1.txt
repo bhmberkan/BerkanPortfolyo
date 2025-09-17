@@ -1,9 +1,5 @@
 ﻿
 
-Temayı temize çekiyorum. Daha sonra veritabanını oluştutup modelimi aktaracağım gerisi birkaç günümü alacak.
+Tema nerdeyse tamam ufak eksiklikler var Backend yazarken düzenlerim onları da.
 
-Navbar için denemeler yaptım olmadı solidi eziyorum.
-
-ilk üç sayfanın tasarımı bitti. Hoşgeldiniz, portfolyo, Galery.
-
-En başta yazan giriş kısmını düzelticem.
+Hakkımda kısmına ufakta olsa bir yazı alanı ekleyeceğım

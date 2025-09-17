@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+
+
+@Html.Action("NavBarPartial")
+
+<section class="py-2">
+
+    <div class="container px-md-5">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="card border-0 mb-3">
+                            <img class="card-img-top" src="~/fotogen/public/assets/img/team/img1.png" alt="" />
+                            <div class="row g-0 card-body px-0 pt-2">
+                                <div class="col-12 col-xl-8 text-center text-xl-start">
+                                    <h4>Michael Lurie</h4>
+                                    <p class="text-warning mb-2">CEO</p>
+                                </div>
+                                <div class="col-12 col-xl-4 justify-content-center fs-2 d-flex gap-1"><a href="#!"><span class="team-social-icon fab fa-linkedin ml-3"></span></a><a href="#!"><span class="team-social-icon fab fa-facebook ml-3"></span></a><a href="#!"><span class="team-social-icon fab fa-instagram ml-3"></span></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of .container-->
+
+    <section class="py-4">
+        <div class="container px-md-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-10">
+                    <div class="text-center p-4 rounded-3" style="background-color:#FAA533;">
+                        <h2 class="fw-bolder text-white mb-3">Who We Are</h2>
+                        <p class="text-white-50 fs-3 mb-1">
+                            We are storytellers passionate about photography, design,
+                            and innovation. Our mission is to capture unique stories
+                            and deliver timeless experiences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="py-4" id="contact">
+
+        <div class="container px-md-5">
+            <div class="row align-items-center">
+                <div class="my-4 text-center">
+                    <h1 class="text-uppercase fs-lg-8 fs-6 fw-bolder text-300 lh-1 position-relative z-index-0">Contact</h1>
+                    <h1 class="fw-bolder text-outlined fs-7 text-white lh-1 mt-n4 position-relative z-index--1">Get in Touch</h1>
+                    <form class="my-5 px-3">
+                        <div class="row g-3 g-md-5">
+                            <div class="col-md-6">
+                                <div class="card border-0">
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control form-fotogency-header-control" id="floatingEmail" type="email" placeholder="name@example.com" />
+                                        <label for="floatingEmail">Email</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control form-fotogency-header-control" id="floatingName" type="text" placeholder="name" />
+                                        <label for="floatingName">Your name</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control form-fotogency-header-control" id="floatingPhone" type="tel" placeholder="name@example.com" />
+                                        <label for="floatingPhone">Phone number</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control form-fotogency-header-control" id="floatingLocation" type="text" placeholder="Desired Location" />
+                                        <label for="floatingLocation">Desired location</label>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card border-0">
+                                    <input class="form-control opacity-0 pb-0 pe-none d-none d-md-block" />
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control form-fotogency-header-control border ps-2 form-fotogency-header-control" id="floatingTextarea" style="height: 210px" placeholder="Leave a comment here"></textarea>
+                                        <label class="ps-2" for="floatingTextarea">Message</label>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-12 text-end mt-3">
+                                <button class="btn btn-link text-warning p-0" type="submit"><span class="fw-bolder text-uppercase">Submit</span><img class="ms-3" src="assets/img/icons/long-arrow.png" alt="" /></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- end of .container-->
+
+    </section>
+
+</section>
+
+
+@Html.Action("FooterPartial", "Main")
+
+
+@Html.Action("SectionPartial", "Main")

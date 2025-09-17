@@ -120,10 +120,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\GaleryController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PortfolyoController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -380,6 +382,10 @@
     <Content Include="Views\Portfolyo\NavbarPartial.cshtml" />
     <Content Include="Views\Galery\Index.cshtml" />
     <Content Include="Views\Galery\NavbarPartial.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\NavbarPartial.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\NavbarPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
