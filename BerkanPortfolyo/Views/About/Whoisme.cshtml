@@ -1,0 +1,82 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model About
+
+
+<section class="py-4">
+    <div class="container px-md-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-12 wave-box text-center p-4 rounded-3 text-white">
+
+                <!-- Üst Dalga -->
+                <svg class="waves top" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 1200 200" preserveAspectRatio="none">
+                    <!-- Kum -->
+                    <path d="M0,80 C300,200 900,0 1200,100 L1200,0 L0,0 Z" fill="#064232 "></path>
+                    <!-- Açık mavi deniz -->
+                    <path d="M0,100 C300,0 900,200 1200,80 L1200,0 L0,0 Z" fill="#154D71" opacity="0.8">
+                        <animate attributeName="d" dur="8s" repeatCount="indefinite"
+                                 values="
+                 M0,100 C300,0 900,200 1200,80 L1200,0 L0,0 Z;
+                 M0,80 C300,200 900,0 1200,100 L1200,0 L0,0 Z;
+                 M0,100 C300,0 900,200 1200,80 L1200,0 L0,0 Z" />
+                    </path>
+                </svg>
+
+                <!-- Yazı Alanı -->
+                <div class="wave-box text-center p-4 rounded-3 text-white">
+                    <h2 class="fw-bolder mb-3" style="color: #1C6EA4 !important ">@Model.WhoisMe</h2>
+                    <p class="text-white-50 fs-3 mb-1" style="color: #1C352D !important ">
+                       @Model.WhoisMeDescription
+                    </p>
+                </div>
+
+                <!-- Alt Dalga -->
+                <svg class="waves bottom" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 1200 200" preserveAspectRatio="none">
+                    <!-- Kum -->
+                    <path d="M0,80 C300,200 900,0 1200,100 L1200,200 L0,200 Z" fill="#154D71"></path>
+                    <!-- Açık mavi deniz -->
+                    <path d="M0,100 C300,0 900,200 1200,80 L1200,200 L0,200 Z" fill="#660B05" opacity="0.8">
+                        <animate attributeName="d" dur="8s" repeatCount="indefinite"
+                                 values="
+                 M0,100 C300,0 900,200 1200,80 L1200,200 L0,200 Z;
+                 M0,80 C300,200 900,0 1200,100 L1200,200 L0,200 Z;
+                 M0,100 C300,0 900,200 1200,80 L1200,200 L0,200 Z" />
+                    </path>
+                </svg>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<style>
+
+    .wave-box h2,
+    .wave-box p {
+        opacity: 0;
+        transform: translateY(-30px);
+        transition: all 1s ease; /* animasyon burada */
+    }
+
+    .wave-box.show h2 {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 1s; /* h2 için gecikme */
+    }
+
+    .wave-box.show p {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 1.3s; /* p için gecikme */
+    }
+</style>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.wave-box').classList.add('show');
+    });
+</script>
