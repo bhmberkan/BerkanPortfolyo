@@ -1,0 +1,69 @@
+﻿@model BerkanPortfolyo.Models.Entity.Contact
+
+<section class="py-4" id="contact">
+
+    <div class="container px-md-5">
+        <div class="row align-items-center">
+            <div class="my-4 text-center">
+                <h1 class="text-uppercase fs-lg-8 fs-6 fw-bolder text-300 lh-1 position-relative z-index-0">İletişim</h1>
+                <h1 class="fw-bolder text-outlined fs-7 text-white lh-1 mt-n4 position-relative z-index--1"> Bana ulaşın</h1>
+
+
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        @TempData["SuccessMessage"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+
+
+                <form id="contact-form" method="POST" class="my-5 px-3">
+                    <div class="row g-3 g-md-5">
+                        <div class="col-md-6">
+                            <div class="card border-0">
+                                <div class="form-floating mb-3">
+                                    @Html.TextBoxFor(x => x.Mail, new { @type = "email", PlaceHolder = "örnek@example.com", requried = "", @class = "form-control form-fotogency-header-control", id = "floatingEmail" })
+                                    @*<input class="form-control form-fotogency-header-control" id="floatingEmail" type="email" placeholder="örnek@example.com" />*@
+                                    <label for="floatingEmail">Email</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    @Html.TextBoxFor(x => x.NameSurname, new { @type = "text", PlaceHolder = "Adınız Soyadınız", requried = "", @class = "form-control form-fotogency-header-control", id = "floatingName" })
+                                    @*<input class="form-control form-fotogency-header-control" id="floatingName" type="text" placeholder="adınız soyadınız" />*@
+                                    <label for="floatingName">İsminiz</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    @Html.TextBoxFor(x => x.Phone, new { @type = "tel", PlaceHolder = "Numaranız", requried = "", @class = "form-control form-fotogency-header-control", id = "floatingPhone" })
+                                    @*<input class="form-control form-fotogency-header-control" id="floatingPhone" type="tel" placeholder="+90 505 55 55 55" />*@
+                                    <label for="floatingPhone">Numaranız</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    @Html.TextBoxFor(x => x.Title, new { @type = "text", PlaceHolder = "Başlık", requried = "", @class = "form-control form-fotogency-header-control", id = "floatingLocation" })
+                                    @*<input class="form-control form-fotogency-header-control" id="floatingLocation" type="text" placeholder="Başlık" />*@
+                                    <label for="floatingLocation">Başlık</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-0">
+                                <input class="form-control opacity-0 pb-0 pe-none d-none d-md-block" />
+                                <div class="form-floating mb-3">
+                                    @Html.TextAreaFor(x => x.Message, new { PlaceHolder = "Mesajınız", requried = "", @class = "form-control form-fotogency-header-control border ps-2 form-fotogency-header-control", id = "floatingTextarea", style = "height: 210px" })
+                                    @* <textarea class="form-control form-fotogency-header-control border ps-2 form-fotogency-header-control" id="floatingTextarea" style="height: 210px" placeholder="Leave a comment here"></textarea>*@
+                                    <label class="ps-2" for="floatingTextarea">Message</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-12 text-end mt-3">
+                            <button class="btn btn-link text-warning p-0" type="submit"><span class="fw-bolder text-uppercase">Gönder</span><img class="ms-3" src="assets/img/icons/long-arrow.png" alt="" /></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end of .container-->
+
+</section>
