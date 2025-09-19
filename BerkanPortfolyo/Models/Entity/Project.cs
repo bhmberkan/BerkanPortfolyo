@@ -20,5 +20,6 @@ namespace BerkanPortfolyo.Models.Entity
         public string Title { get; set; }
         public string SubTitle { get; set; }
         public string Description { get; set; }
+        public string ProjecUrl { get; set; }
     }
 }
