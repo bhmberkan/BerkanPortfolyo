@@ -29,7 +29,7 @@ namespace BerkanPortfolyo.Models.Entity
         public virtual DbSet<Contact> Contact { get; set; }
         public virtual DbSet<Main> Main { get; set; }
         public virtual DbSet<Photo> Photo { get; set; }
-        public virtual DbSet<Portfolio> Portfolio { get; set; }
         public virtual DbSet<Project> Project { get; set; }
+        public virtual DbSet<Portfolio> Portfolio { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BerkanPortfolyo.Models.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,12 @@ namespace BerkanPortfolyo.Controllers
 {
     public class ProjectController : Controller
     {
+        BBTPortfolyoEntities db = new BBTPortfolyoEntities();
         // GET: Project
         public ActionResult Index()
         {
-            return View();
+            var values = db.Project.ToList();
+            return View(values);
         }
 
         public PartialViewResult NavbarPartial()

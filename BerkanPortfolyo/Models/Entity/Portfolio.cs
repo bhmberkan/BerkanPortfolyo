@@ -17,8 +17,6 @@ namespace BerkanPortfolyo.Models.Entity
         public int Id { get; set; }
         public string Title { get; set; }
         public string SubTitle { get; set; }
-        public string PhotoTitle { get; set; }
-        public string PhotoSubTitle { get; set; }
         public string Description { get; set; }
         public string PhotoUrl { get; set; }
     }

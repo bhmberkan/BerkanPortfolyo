@@ -1,4 +1,6 @@
-﻿
+﻿@using BerkanPortfolyo.Models.Entity
+@model List<Photo>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Layout/Index.cshtml";
@@ -16,15 +18,15 @@
         <div class="container px-md-5">
 
             <div class="row g-3" data-isotope='{"layoutMode":"packery"}'>
-                <div class="col-lg-3 col-sm-6 col-12 shortfilms gallery-item isotope-item"><img class="img-fluid w-100" src="~/fotogen/public/assets/img/gallery/1.png" alt="" data-glightbox="title: To infinity and beyond; description: Iching biching chiching" /></div>
-                <div class="col-lg-3 col-sm-6 col-12 shortfilms gallery-item isotope-item"><img class="img-fluid w-100" src="~/fotogen/public/assets/img/gallery/2.png" alt="" data-glightbox="title: To infinity and beyond; description: Iching biching chiching" /></div>
-                <div class="col-lg-6 col-12  shortfilms gallery-item isotope-item"><img class="img-fluid w-100" src="~/fotogen/public/assets/img/gallery/3.png" alt="" data-glightbox="title: To infinity and beyond; description: Iching biching chiching" /></div>
-                <div class="col-lg-6 col-12 professional gallery-item isotope-item"><img class="img-fluid w-100" src="~/fotogen/public/assets/img/gallery/4.png" alt="" data-glightbox="title: To infinity and beyond; description: Iching biching chiching" /></div>
-                <div class="col-lg-3 col-sm-6 col-12 professional gallery-item isotope-item"><img class="img-fluid w-100" src="~/fotogen/public/assets/img/gallery/5.png" alt="" data-glightbox="title: To infinity and beyond; description: Iching biching chiching" /></div>
-                <div class="col-lg-3 col-sm-6 col-12 professional gallery-item isotope-item"><img class="img-fluid w-100" src="~/fotogen/public/assets/img/gallery/6.png" alt="" data-glightbox="title: To infinity and beyond; description: Iching biching chiching" /></div>
-                <div class="col-lg-3 col-sm-6 col-12 commercial gallery-item isotope-item"><img class="img-fluid w-100" src="~/fotogen/public/assets/img/gallery/7.png" alt="" data-glightbox="title: To infinity and beyond; description: Iching biching chiching" /></div>
-                <div class="col-lg-3 col-sm-6 col-12 commercial gallery-item isotope-item"><img class="img-fluid w-100" src="~/fotogen/public/assets/img/gallery/8.png" alt="" data-glightbox="title: To infinity and beyond; description: Iching biching chiching" /></div>
-                <div class="col-lg-6 col-12 commercial gallery-item isotope-item"><img class="img-fluid w-100" src="~/fotogen/public/assets/img/gallery/9.png" alt="" data-glightbox="title: To infinity and beyond; description: Iching biching chiching" /></div>
+
+                @foreach (var x in Model)
+                {
+                    <div class="col-lg-3 col-sm-6 col-12 shortfilms gallery-item isotope-item"><img class="img-fluid w-100" src="@x.PhotoUrl" alt="" data-glightbox="title: To infinity and beyond; description: Iching biching chiching" /></div>
+
+
+                }
+
+
             </div>
         </div>
     </section>
