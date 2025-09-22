@@ -31,5 +31,6 @@ namespace BerkanPortfolyo.Models.Entity
         public virtual DbSet<Photo> Photo { get; set; }
         public virtual DbSet<Project> Project { get; set; }
         public virtual DbSet<Portfolio> Portfolio { get; set; }
+        public virtual DbSet<Admin> Admin { get; set; }
     }
 }

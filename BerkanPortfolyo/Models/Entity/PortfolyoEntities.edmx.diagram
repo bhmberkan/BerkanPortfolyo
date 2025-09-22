@@ -11,6 +11,7 @@
         <EntityTypeShape EntityType="BBTPortfolyoModel.Photo" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BBTPortfolyoModel.Project" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BBTPortfolyoModel.Portfolio" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="BBTPortfolyoModel.Admin" Width="1.5" PointX="7.5" PointY="3.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
