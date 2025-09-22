@@ -1,0 +1,130 @@
+﻿
+@{
+    Layout = null;
+}
+
+<style>
+    .site-link {
+        background-color: darkred !important;
+        color: white; /* Metin rengi */
+        padding: 10px 20px; /* Buton iç boşlukları */
+        text-decoration: none; /* Alt çizgiyi kaldırmak için */
+        display: inline-block;
+        border-radius: 5px; /* Köşeleri yuvarlatmak için */
+    }
+
+        .site-link:hover {
+            background-color: crimson; /* Hover durumunda arka plan rengi */
+            color: black; /* Hover durumunda metin rengi */
+            transition: background-color 0.3s, color 0.3s; /* Geçiş animasyonu */
+        }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* scroll çıkmasın */
+    }
+
+    body {
+        background-color: #234C6A !important;
+    }
+
+    .main {
+        background-color: #234C6A !important;
+        min-height: 100vh; /* tam ekran görünmesi için */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } justify-content: center;
+    }
+
+    .signin-image {
+        
+        margin-bottom: 20px;
+    }
+
+        .signin-image figure {
+            margin: 0;
+        }
+
+        .signin-image img {
+            width: 320px; /* daha büyük boyut */
+            height: auto;
+            border-radius: 15px; /* köşeleri yuvarlat, ama kenar renksiz */
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.25); /* yumuşak gölge */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .signin-image img:hover {
+                transform: scale(1.08); /* hover’da biraz daha büyüsün */
+                box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.35); /* hover gölgesi */
+            }
+
+
+   .signin-content {
+    margin-top:-300px; /* 50px yukarı kaydırır */
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form Redmondtrade</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="~/aLogin/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href="~/Active/assets/img/Titleİcon.png" rel="icon">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/aLogin/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+        <section class="sign-in">
+            <div class="container" style="background-color: #FDEB9E !important">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="https://i.hizliresim.com/h9e4ll9.jpg" alt="sign in image"></figure>
+                    </div>
+
+                    <div class="signin-form" >
+                        <h2 class="form-title">Sign in</h2>
+
+                        @using (Html.BeginForm("Login", "Admin", FormMethod.Post, new { @class = "register-form", id = "login-form" }))
+                        {
+                            <div class="form-group">
+                                <label for="Name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="NickName" id="NickName" placeholder="Nickname" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Password"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="Password" id="Password" placeholder="Şifre" required />
+                            </div>
+
+                            <div class="form-group form-button">
+                                <button type="submit" class="form-submit site-link">Admin Paneli</button>
+                            </div>
+
+                            
+                            if(@ViewBag.ErrorMessage != null)
+                            {
+                                <p style="color:red">@ViewBag.ErrorMessage</p>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JS -->
+    <script src="~/aLogin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/aLogin/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
