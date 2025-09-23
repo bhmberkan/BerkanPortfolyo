@@ -1,0 +1,70 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model List<Portfolio>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Portfolyo Listesi</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Baslık</th>
+                                    <th scope="col">Alt Baslık</th>
+                                    <th scope="col">Açıklama</th>
+                                    <th scope="col">Fotograf</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var x in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@x.Id</th>
+                                        <td>@x.Title</td>
+                                        <td>@x.SubTitle</td>
+                                        <td>
+                                            @(x.Description.Length > 30
+                                        ? x.Description.Substring(0, 30) + "..."
+                                        : x.Description)
+                                        </td>
+                                        <td><img src="@x.PhotoUrl" alt="Görsel" style="width:100px; height:auto; border-radius:5px;" /></td>
+
+                                        <td><a href="/AdminPortfolyo/DeletePortfolyo/@x.Id" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/AdminPortfolyo/UpdatePortfolyo/@x.Id" class="btn btn-success">Güncelle</a></td>
+
+
+                                    </tr>
+                                }
+
+
+
+
+                            </tbody>
+                        </table>
+                        <a href="/AdminPortfolyo/CreateAdminPortfolyo/" class="btn btn-info">Yeni Portfolyo Ekle</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+

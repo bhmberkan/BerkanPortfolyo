@@ -1,0 +1,52 @@
+﻿@model BerkanPortfolyo.Models.Entity.Portfolio
+@{
+    ViewBag.Title = "UpdatePortfolyo";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Portfolyo Güncelleme Sayfası</h4>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("UpdatePortfolyo", "AdminPortfolyo", FormMethod.Post))
+                        {
+
+                            @Html.HiddenFor(x => x.Id) // hiddenfor arka planda çalışacak anlamında
+                            <br />
+
+                            @Html.Label("Başlık")
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Alt Baslık")
+                            @Html.TextAreaFor(x => x.SubTitle, 10, 4, new { @class = "form-control" })
+                            <br />
+
+                            <br />
+                            @Html.Label("Açıklama")
+                            @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                            <br />
+
+                            @Html.Label("Photo ")
+                            @Html.TextBoxFor(x => x.PhotoUrl, new { @class = "form-control" })
+                            <br />
+
+                          
+
+                            <button class="btn btn-warning"> Değişiklikleri Kaydet </button>
+                        }
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>

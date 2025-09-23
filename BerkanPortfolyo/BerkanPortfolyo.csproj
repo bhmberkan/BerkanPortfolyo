@@ -161,7 +161,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminGaleryController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\AdminPortfolyoController.cs" />
     <Compile Include="Controllers\GaleryController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -1504,6 +1506,13 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\AdminLayout\Index.cshtml" />
+    <Content Include="Views\Admin\UpdateMain.cshtml" />
+    <Content Include="Views\AdminPortfolyo\Index.cshtml" />
+    <Content Include="Views\AdminPortfolyo\UpdatePortfolyo.cshtml" />
+    <Content Include="Views\AdminPortfolyo\CreateAdminPortfolyo.cshtml" />
+    <Content Include="Views\AdminGalery\Index.cshtml" />
+    <Content Include="Views\AdminGalery\CreateAdminGalery.cshtml" />
+    <Content Include="Views\AdminGalery\UpdateGalery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

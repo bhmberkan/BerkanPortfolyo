@@ -1,0 +1,67 @@
+﻿@model BerkanPortfolyo.Models.Entity.Main
+@{
+    ViewBag.Title = "UpdateMain";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Main Güncelleme Sayfası</h4>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("UpdateMain", "Admin", FormMethod.Post))
+                        {
+
+                            @Html.HiddenFor(x => x.Id) // hiddenfor arka planda çalışacak anlamında
+                            <br />
+
+                            @Html.Label("Başlık")
+                            @Html.TextBoxFor(x => x.title1, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Baslik 2")
+                            @Html.TextAreaFor(x => x.title2, 10, 4, new { @class = "form-control" })
+                            <br />
+
+                            <br />
+                            @Html.Label("Baslik 3")
+                            @Html.TextBoxFor(x => x.title3, new { @class = "form-control" })
+                            <br />
+
+                            @Html.Label("Photo 1")
+                            @Html.TextBoxFor(x => x.photo1, new { @class = "form-control" })
+                            <br />
+
+                            @Html.Label("Photo 2")
+                            @Html.TextBoxFor(x => x.photo2, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Photo 3")
+                            @Html.TextBoxFor(x => x.photo3, new { @class = "form-control" })
+                            <br />
+
+                            @Html.Label("p Title")
+                            @Html.TextBoxFor(x => x.ptitle, new { @class = "form-control" })
+                            <br />
+
+                            @Html.Label("P  açıklama")
+                            @Html.TextBoxFor(x => x.pdescription, new { @class = "form-control" })
+                            <br />
+
+                            <button class="btn btn-warning"> Değişiklikleri Kaydet </button>
+                        }
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
