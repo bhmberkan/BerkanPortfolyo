@@ -1,0 +1,50 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model Portfolio
+@{
+    ViewBag.Title = "CreateAdminPortfolyo";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Portfolyo Ekleme Sayfası</h4>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("CreateAdminPortfolyo", "AdminPortfolyo", FormMethod.Post))
+                        {
+
+                         
+                            @Html.Label("Başlık")
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Alt Baslık")
+                            @Html.TextBoxFor(x => x.SubTitle, new { @class = "form-control" })
+                            <br />
+
+                            <br />
+                            @Html.Label("Açıklama")
+                            @Html.TextAreaFor(x => x.Description, 10, 7, new { @class = "form-control" })
+                            <br />
+
+                            @Html.Label("Photo ")
+                            @Html.TextBoxFor(x => x.PhotoUrl, new { @class = "form-control" })
+                            <br />
+
+
+
+                            <button class="btn btn-warning"> Değişiklikleri Kaydet </button>
+                        }
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>

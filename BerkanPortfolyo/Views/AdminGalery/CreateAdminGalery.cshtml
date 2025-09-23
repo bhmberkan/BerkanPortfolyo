@@ -1,0 +1,41 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model Photo
+@{
+    ViewBag.Title = "CreateAdminGalery";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Fotograf Ekleme Sayfası</h4>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("CreateAdminGalery", "AdminGalery", FormMethod.Post))
+                        {
+
+
+
+                            @Html.Label("Photo Url")
+                            @Html.TextBoxFor(x => x.PhotoUrl, new { @class = "form-control" })
+                            <br />
+
+
+
+                            <button class="btn btn-warning"> Değişiklikleri Kaydet </button>
+                        }
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>

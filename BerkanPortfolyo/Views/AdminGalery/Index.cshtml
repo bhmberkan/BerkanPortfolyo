@@ -1,0 +1,63 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model List<Photo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 1;
+}
+
+
+Buraya paging yapıalcak
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Fotograf Listesi</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table" style="border-collapse: separate; border-spacing: 0 15px;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Fotograf</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var x in Model)
+                                {
+                                
+                                    <tr>
+                                        <th scope="row">@count</th>
+
+                                        <td><img src="@x.PhotoUrl" alt="Görsel" style="width:100px; height:auto; border-radius:5px;" /></td>
+
+                                        <td><a href="/AdminGalery/DeleteGalery/@x.Id" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/AdminGalery/UpdateGalery/@x.Id" class="btn btn-success">Güncelle</a></td>
+
+
+                                    </tr>
+                                    count++;
+                                }
+
+                              
+
+
+                            </tbody>
+                        </table>
+                        <a href="/AdminGalery/CreateAdminGalery/" class="btn btn-info">Yeni Fotograf Ekle</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
