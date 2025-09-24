@@ -1,0 +1,87 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model About
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Proje Güncelleme Sayfası</h4>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("UpdateAbout", "AdminAbout", FormMethod.Post))
+                        {
+
+                            @Html.HiddenFor(x => x.ID) // hiddenfor arka planda çalışacak anlamında
+                            <br />
+
+                            @Html.Label("İsim Soyisim")
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("İş")
+                            @Html.TextBoxFor(x => x.Job, new { @class = "form-control" })
+                            <br />
+
+
+
+                            @Html.Label("Ben kimim")
+                            @Html.TextBoxFor(x => x.WhoisMe, new { @class = "form-control" })
+                            <br />
+
+
+                            <br />
+                            @Html.Label("Ben kimim Açıklama")
+                            @Html.TextAreaFor(x => x.WhoisMeDescription, 10, 4, new { @class = "form-control" })
+                            <br />
+
+
+
+
+                            @Html.Label("Photo ")
+                            @Html.TextBoxFor(x => x.PhotoUrl, new { @class = "form-control" })
+                            <br />
+
+
+                            @Html.Label("Scoial Link 1")
+                            @Html.TextBoxFor(x => x.Sociallink1, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Socail icon Url 1")
+                            @Html.TextBoxFor(x => x.SocialiconUrl, new { @class = "form-control" })
+                            <br />
+
+
+                            @Html.Label("Scoial Link 2 ")
+                            @Html.TextBoxFor(x => x.Sociallink2, new { @class = "form-control"})
+                            <br />
+                            @Html.Label("Socail icon Url 2")
+                            @Html.TextBoxFor(x => x.SocialiconUrl2, new { @class = "form-control" })
+                            <br />
+
+                            @Html.Label("Scoial Link 3 ")
+                            @Html.TextBoxFor(x => x.Sociallink3, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Socail icon  Url 3")
+                            @Html.TextBoxFor(x => x.SocialiconUrl3, new { @class = "form-control" })
+                            <br />
+                            <button class="btn btn-warning"> Değişiklikleri Kaydet </button>
+                        }
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+

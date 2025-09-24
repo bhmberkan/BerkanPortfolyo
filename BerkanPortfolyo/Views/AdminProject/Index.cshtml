@@ -1,0 +1,77 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model List<Project>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Proje Listesi</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table" style="border-collapse: separate; border-spacing: 0 15px;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Başlık</th>
+                                    <th scope="col">Alt Başlık</th>
+                                    <th scope="col">Açıklama</th>
+                                    <th scope="col">Tarih(Yıl)</th>
+                                    <th scope="col">Photo</th>
+                                    <th scope="col">Proje(Url)</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var x in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@x.ID</th>
+                                        <td>@x.Title</td>
+                                        <td>@x.SubTitle</td>
+                                        <td>
+                                            @(x.Description.Length > 30
+                                        ? x.Description.Substring(0, 30) + "..."
+                                        : x.Description)
+                                        </td>
+                                        <td>@x.Date</td>
+                                        <td><img src="@x.PhotoUrl" alt="Görsel" style="width:100px; height:auto; border-radius:5px;" /></td>
+
+                                        <td>@x.ProjecUrl</td>
+
+                                        <td><a href="/AdminProject/DeleteProject/@x.ID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/AdminProject/UpdateProject/@x.ID" class="btn btn-success">Güncelle</a></td>
+
+
+                                    </tr>
+                                }
+
+
+
+
+                            </tbody>
+                        </table>
+                        <a href="/AdminProject/CreateAdminProject/" class="btn btn-info">Yeni Project Ekle</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
