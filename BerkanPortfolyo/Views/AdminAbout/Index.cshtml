@@ -1,0 +1,76 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model  About
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Hakkımda </h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table" style="border-collapse: separate; border-spacing: 0 15px;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">İsim Soyisim</th>
+                                    <th scope="col">İş</th>
+                                    <th scope="col">Ben Kimim</th>
+                                    <th scope="col">Açıklama</th>
+                                    <th scope="col">Photo</th>
+                                    
+                               
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                               
+                                    <tr>
+                                        <th scope="row">@Model.ID</th>
+                                        <td>@Model.Name</td>
+                                        <td>@Model.Job</td>
+                                        <td>@Model.WhoisMe</td>
+                                        <td>
+                                            @(Model.WhoisMeDescription.Length > 30
+                                        ? Model.WhoisMeDescription.Substring(0, 30) + "..."
+                                        : Model.WhoisMeDescription)
+                                        </td>
+                                        
+                                        <td><img src="@Model.PhotoUrl" alt="Görsel" style="width:100px; height:auto; border-radius:5px;" /></td>
+
+                                        
+
+                                   
+                                        <td><a href="/AdminAbout/UpdateAbout/@Model.ID" class="btn btn-success">Güncelle</a></td>
+
+
+                                    </tr>
+                                
+
+
+
+
+                            </tbody>
+                        </table>
+                   
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
