@@ -1,11 +1,16 @@
 ﻿@using BerkanPortfolyo.Models.Entity
-@model List<Project>
+@model PagedList<Project>
+@using PagedList.Mvc
+@using PagedList
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
 
+
+<link href="~/Otika/assets/css/Paging.css" rel="stylesheet" />
 
 
 <section class="section">
@@ -61,6 +66,12 @@
 
                             </tbody>
                         </table>
+                        <br />
+                        @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }),
+      new PagedListRenderOptions
+        {
+            UlElementClasses = new[] { "pagination justify-content-center" }
+         })
                         <a href="/AdminProject/CreateAdminProject/" class="btn btn-info">Yeni Project Ekle</a>
                     </div>
                 </div>

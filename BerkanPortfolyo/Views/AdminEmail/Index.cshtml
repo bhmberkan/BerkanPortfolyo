@@ -1,0 +1,123 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model  PagedList<Contact>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+<script src="~/Scripts/bootstrap.bundle.min.js"></script>
+<link href="~/Otika/assets/css/Paging.css" rel="stylesheet" />
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Hakkımda </h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table" style="border-collapse: separate; border-spacing: 0 15px;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Mail</th>
+                                    <th scope="col">İsim</th>
+                                    <th scope="col">Başlık</th>
+                                    <th scope="col">Detay</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var x in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@x.ID</th>
+                                        <td>@x.Mail</td>
+                                        <td>@x.NameSurname</td>
+                                        <td>@x.Title</td>
+
+
+
+                                        <td>
+                                            <button type="button" class="btn btn-warning showDetail" data-id="@x.ID">
+                                                Detay
+                                            </button>
+                                        </td>
+
+
+                                    </tr>
+
+                                }
+
+
+
+
+
+                            </tbody>
+                        </table>
+                        <br/>
+                        @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }),
+                         new PagedListRenderOptions
+                          {
+                             UlElementClasses = new[] { "pagination justify-content-center" }
+                          })
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mesaj Detayı</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBodyContent">
+                <!-- Ajax ile yüklenecek içerik buraya gelecek -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $(".showDetail").click(function () {
+            var id = $(this).data("id");
+
+            $.ajax({
+                url: '/AdminEmail/EmailDetail/' + id, // Controller Action
+                type: 'GET',
+                success: function (data) {
+                    $("#modalBodyContent").html(data); // Modal içine bas
+                    $("#detailModal").modal('show');   // Modalı aç
+                },
+                error: function () {
+                    alert("Bir hata oluştu.");
+                }
+            });
+        });
+    });
+</script>

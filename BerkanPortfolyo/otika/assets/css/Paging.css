@@ -1,0 +1,66 @@
+﻿.pagination {
+    display: flex;
+    justify-content: center; /* Ortala */
+    align-items: center;
+    margin: 30px auto 0 auto; /* Üstten boşluk ve yatay ortalama */
+    padding: 5px; /* Padding'i biraz azalttım */
+    gap: 10px; /* Butonlar arası boşluğu artırdım */
+}
+
+    .pagination li {
+        list-style: none;
+    }
+
+    .pagination .page-link {
+        color: rgb(0, 30, 68) !important;
+        background-color: #007bff;
+        padding: 10px 14px; /* Hafif küçülttüm */
+        border-radius: 8px; /* Daha modern köşe */
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        font-weight: 600;
+        font-size: 16px; /* Biraz küçülttüm */
+        box-shadow: 1px 1px 6px rgba(0, 123, 255, 0.25); /* Daha yumuşak gölge */
+    }
+
+        /* Hover efekti */
+        .pagination .page-link:hover {
+            background-color: #0056b3 !important;
+            border-color: #0056b3 !important;
+            box-shadow: 2px 2px 8px rgba(0, 86, 179, 0.4);
+        }
+
+    /* Aktif sayfa numarası (kırmızı) */
+    .pagination li.active a,
+    .pagination li.active span {
+        background-color: rgb(108, 2, 10) !important;
+        border-color: rgb(2, 28, 97) !important;
+        color: rgb(236, 238, 243) !important;
+        font-weight: bold !important;
+        padding: 12px 18px !important;
+        transform: scale(1.1); /* Biraz daha belirgin */
+    }
+
+    /* Devre dışı butonlar */
+    .pagination .page-item.disabled .page-link {
+        background-color: rgb(0, 30, 68) !important;
+        border-color: rgb(0, 30, 68) !important;
+        color: #001a30 !important;
+        box-shadow: none !important;
+        opacity: 0.5 !important;
+    }
+
+    /* Önceki & Sonraki Butonları */
+    .pagination .page-item:first-child .page-link,
+    .pagination .page-item:last-child .page-link {
+        background-color: #001a30 !important;
+        border-color: #001a30 !important;
+        font-size: 16px;
+        padding: 10px 14px;
+    }
+
+        .pagination .page-item:first-child .page-link:hover,
+        .pagination .page-item:last-child .page-link:hover {
+            background-color: #011523 !important;
+            border-color: #02243d !important;
+        }

@@ -61,6 +61,12 @@
     <Reference Include="MimeKit, Version=4.13.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
       <HintPath>..\packages\MimeKit.4.13.0\lib\net48\MimeKit.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
@@ -162,6 +168,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminAboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminEmailController.cs" />
     <Compile Include="Controllers\AdminGaleryController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\AdminPortfolyoController.cs" />
@@ -257,6 +264,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fotogen\.gitignore" />
     <Content Include="fotogen\gulpfile.js" />
@@ -977,6 +985,7 @@
     <Content Include="otika\assets\css\components.css" />
     <Content Include="otika\assets\css\custom.css" />
     <Content Include="otika\assets\css\MaterialIcons-Regular.html" />
+    <Content Include="otika\assets\css\Paging.css" />
     <Content Include="otika\assets\css\style.css" />
     <Content Include="otika\assets\fonts\fonts\webfonts\fa-brands-400.html" />
     <Content Include="otika\assets\fonts\nunito-v9-latin-600.svg" />
@@ -1520,6 +1529,9 @@
     <Content Include="Views\AdminProject\UpdateProject.cshtml" />
     <Content Include="Views\AdminAbout\Index.cshtml" />
     <Content Include="Views\AdminAbout\UpdateAbout.cshtml" />
+    <Content Include="Views\AdminEmail\Index.cshtml" />
+    <Content Include="Views\AdminEmail\EmailDetail.cshtml" />
+    <Content Include="Views\AdminLayout\MessagesNotification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
