@@ -1,4 +1,5 @@
 ﻿using BerkanPortfolyo.Models.Entity;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,9 @@ namespace BerkanGalery.Controllers
         // GET: AdminGalery
         BBTPortfolyoEntities db = new BBTPortfolyoEntities();
         // GET: AdminGalery
-        public ActionResult Index()
+        public ActionResult Index(int sayfa =1)
         {
-            var values = db.Photo.ToList();
+            var values = db.Photo.OrderBy(x=>x.Id).ToPagedList(sayfa,10);
             return View(values);
         }
 

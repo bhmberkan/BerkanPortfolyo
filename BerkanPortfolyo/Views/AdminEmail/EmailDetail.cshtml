@@ -1,0 +1,52 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model Contact
+
+<div class="container-fluid">
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <h5 class="card-title mb-4 text-primary">
+                <i class="fas fa-envelope-open-text"></i> Mesaj Detayı
+            </h5>
+
+            <dl class="row">
+                <dt class="col-sm-3">İsim Soyisim:</dt>
+                <dd class="col-sm-9">@Model.NameSurname</dd>
+
+                <dt class="col-sm-3">Mail:</dt>
+                <dd class="col-sm-9">
+                    <a href="mailto:@Model.Mail">@Model.Mail</a>
+                </dd>
+
+                <dt class="col-sm-3">Telefon:</dt>
+                <dd class="col-sm-9">
+                    <a href="tel:@Model.Phone">@Model.Phone</a>
+                </dd>
+
+                <dt class="col-sm-3">Başlık:</dt>
+                <dd class="col-sm-9">
+                    <div class="p-1 border rounded bg-light" style="white-space: pre-line;">
+                        @Model.Title
+                    </div>
+                </dd>
+
+                <dt class="col-sm-3">Mesaj:</dt>
+                <dd class="col-sm-9">
+                    <div class="p-3 border rounded bg-light" style="white-space: pre-line;">
+                        @Model.Message
+                    </div>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="card-footer d-flex justify-content-between">
+            <small class="text-muted">Mesaj ID: @Model.ID</small>
+
+            <!-- Silme Butonu -->
+            <form method="post" action="@Url.Action("Delete","AdminEmail", new { id = Model.ID })" onsubmit="return confirm('Bu mesajı silmek istediğinize emin misiniz?');">
+                <button type="submit" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash-alt"></i> Sil
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

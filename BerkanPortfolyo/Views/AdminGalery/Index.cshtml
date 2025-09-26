@@ -1,5 +1,8 @@
 ﻿@using BerkanPortfolyo.Models.Entity
-@model List<Photo>
+@model PagedList<Photo>
+@using PagedList
+@using PagedList.Mvc
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -7,7 +10,9 @@
 }
 
 
-Buraya paging yapıalcak
+
+<link href="~/Otika/assets/css/Paging.css" rel="stylesheet" />
+
 <section class="section">
     <div class="section-body">
         <div class="row">
@@ -30,7 +35,7 @@ Buraya paging yapıalcak
 
                                 @foreach (var x in Model)
                                 {
-                                
+
                                     <tr>
                                         <th scope="row">@count</th>
 
@@ -44,11 +49,17 @@ Buraya paging yapıalcak
                                     count++;
                                 }
 
-                              
+
 
 
                             </tbody>
                         </table>
+                        <br/>
+                        @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }),
+                              new PagedListRenderOptions
+                                {
+                                    UlElementClasses = new[] { "pagination justify-content-center" }
+                                 })
                         <a href="/AdminGalery/CreateAdminGalery/" class="btn btn-info">Yeni Fotograf Ekle</a>
                     </div>
                 </div>

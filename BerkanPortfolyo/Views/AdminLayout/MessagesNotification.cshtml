@@ -1,0 +1,34 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model List<Contact>
+
+
+<div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+    <div class="dropdown-header">
+        Son Mesajlar
+
+    </div>
+    <div class="dropdown-list-content dropdown-list-message">
+        @foreach (var x in Model)
+        {
+            <a href="#" class="dropdown-item">
+                
+                <span class="dropdown-item-avatar text-white">
+
+                    <img alt="image" src="https://i.hizliresim.com/727uz2c.jpg" class="d-sm-none d-lg-inline-block">
+                </span>
+                <span class="dropdown-item-desc">
+                    <span class="message-user">
+                        @x.NameSurname
+                    </span>
+                    <span class="time messege-text">@x.Title</span>
+
+                </span>
+            </a>
+        }
+
+
+    </div>
+    <div class="dropdown-footer text-center">
+        <a href="/AdminEmail/Index/">Tümünü Gör <i class="fas fa-chevron-right"></i></a>
+    </div>
+</div>
