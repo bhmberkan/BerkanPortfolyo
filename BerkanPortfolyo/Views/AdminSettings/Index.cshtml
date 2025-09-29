@@ -1,0 +1,55 @@
+﻿@using BerkanPortfolyo.Models.Entity
+@model Admin
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Admin Listesi</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nick</th>
+                                    <th scope="col">Şifre</th>
+                                 
+
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                <tr>
+                                    <th scope="row">@Model.NickName</th>
+                                    <th scope="row">@Model.Password</th>
+                                  
+                                    <td><a href="/AdminSettings/UpdateAdmin/@Model.Id" class="btn btn-success">Güncelle</a></td>
+
+
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -70,6 +70,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" sizes="16x16" href="~/fotogen/public/assets/img/favicons/favicon-16x16.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -95,7 +96,7 @@
                     <div class="signin-form" >
                         <h2 class="form-title">Sign in</h2>
 
-                        @using (Html.BeginForm("Index", "Admin", FormMethod.Post, new { @class = "register-form", id = "login-form" }))
+                        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "register-form", id = "login-form" }))
                         {
                             <div class="form-group">
                                 <label for="Name"><i class="zmdi zmdi-account material-icons-name"></i></label>

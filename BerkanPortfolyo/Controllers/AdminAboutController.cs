@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace BerkanPortfolyo.Controllers
 {
-    public class AdminAboutController : Controller
+    public class AdminAboutController : BaseController
     {
         BBTPortfolyoEntities db = new BBTPortfolyoEntities();
         // GET: AdminAbout

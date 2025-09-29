@@ -24,7 +24,7 @@ namespace BerkanPortfolyo.Controllers
             if (adminBilgiler != null)
             {
                 // Admin kullanıcı bilgilerini session'a kaydet
-                Session["UserName"] = adminBilgiler.NickName;
+                Session["NickName"] = adminBilgiler.NickName;
                 Session["UserId"] = adminBilgiler.Id; // ID'yi de tutmak faydalı olabilir
 
                 return RedirectToAction("Index", "Admin");
@@ -35,6 +35,12 @@ namespace BerkanPortfolyo.Controllers
                 ViewBag.ErrorMessage = "Geçersiz kullanıcı adı veya şifre.";
                 return View();
             }
+        }
+
+        public ActionResult Cikis()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Login");
         }
     }
 }

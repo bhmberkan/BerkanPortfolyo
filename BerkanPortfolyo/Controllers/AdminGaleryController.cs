@@ -1,4 +1,5 @@
-﻿using BerkanPortfolyo.Models.Entity;
+﻿using BerkanPortfolyo.Controllers;
+using BerkanPortfolyo.Models.Entity;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BerkanGalery.Controllers
 {
-    public class AdminGaleryController : Controller
+    public class AdminGaleryController : BaseController
     {
         // GET: AdminGalery
         BBTPortfolyoEntities db = new BBTPortfolyoEntities();
