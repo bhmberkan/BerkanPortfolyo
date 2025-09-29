@@ -1,0 +1,45 @@
+﻿@model BerkanPortfolyo.Models.Entity.Admin
+@{
+    ViewBag.Title = "UpdateAdmin";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Admin Güncelleme Sayfası</h4>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("UpdateAdmin", "AdminSettings", FormMethod.Post))
+                        {
+
+                            @Html.HiddenFor(x => x.Id) // hiddenfor arka planda çalışacak anlamında
+                            <br />
+
+                            @Html.Label("Nickname")
+                            @Html.TextBoxFor(x => x.NickName, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Password")
+                            @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                            <br />
+
+
+
+                            <button class="btn btn-warning"> Değişiklikleri Kaydet </button>
+                        }
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>

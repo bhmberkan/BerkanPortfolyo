@@ -173,6 +173,9 @@
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\AdminPortfolyoController.cs" />
     <Compile Include="Controllers\AdminProjectController.cs" />
+    <Compile Include="Controllers\AdminSettingsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GaleryController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -984,6 +987,7 @@
     <Content Include="otika\assets\css\app.min.css" />
     <Content Include="otika\assets\css\components.css" />
     <Content Include="otika\assets\css\custom.css" />
+    <Content Include="otika\assets\css\erorstyle.css" />
     <Content Include="otika\assets\css\MaterialIcons-Regular.html" />
     <Content Include="otika\assets\css\Paging.css" />
     <Content Include="otika\assets\css\style.css" />
@@ -1532,9 +1536,13 @@
     <Content Include="Views\AdminEmail\Index.cshtml" />
     <Content Include="Views\AdminEmail\EmailDetail.cshtml" />
     <Content Include="Views\AdminLayout\MessagesNotification.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\AdminSettings\Index.cshtml" />
+    <Content Include="Views\AdminSettings\UpdateAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

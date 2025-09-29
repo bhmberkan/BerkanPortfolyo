@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BerkanPortfolyo.Controllers
 {
-    public class AdminEmailController : Controller
+    public class AdminEmailController : BaseController
     {
         BBTPortfolyoEntities db = new BBTPortfolyoEntities();
         // GET: AdminEmail
